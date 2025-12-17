@@ -152,17 +152,18 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark mode styles */
+/* Dark Mode */
 body.dark-mode {
     background-color: #121212;
     color: #f1f1f1;
-}
-
-/* Example for links or other elements */
-a {
-    color: blue;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode a {
     color: lightblue;
+}
+
+body.dark-mode button {
+    background-color: #333;
+    color: #f1f1f1;
 }
