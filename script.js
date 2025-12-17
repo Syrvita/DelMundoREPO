@@ -1,9 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  // A. THEME TOGGLE
+  // A. THEME TOGGLE (persistent dark mode)
   const themeBtn = document.getElementById("themeBtn");
+
+  // Load saved theme from localStorage
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+
+    // Save the preference
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   });
 
   // B. EDIT JOB TITLE
@@ -70,3 +83,4 @@ document.addEventListener("DOMContentLoaded", () => {
     quoteBox.textContent = q;
   });
 });
+
